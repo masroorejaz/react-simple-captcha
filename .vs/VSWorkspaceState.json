@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\hooks"
   ],
-  "SelectedNode": "\\src\\index.js",
+  "SelectedNode": "\\src\\hooks\\react-simple-captcha.js",
   "PreviewInSolutionExplorer": false
 }

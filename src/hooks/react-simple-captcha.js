@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './captcha.css';
 
 let captcha_value = '';
 let captcha_number = '';
@@ -60,7 +59,7 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
 };
 
 export const loadCanvas = () => {
-    return (<div className="col mt-3"><canvas id="canv"></canvas><div><a onClick={() => loadcaptchaenginge(captcha_number)} id="reload_href">Reload Captcha</a></div></div>);
+    return (<div className="col mt-3"><canvas id="canv"></canvas><div><a onClick={() => loadcaptchaenginge(captcha_number)} style={{ cursor: 'pointer', color: 'blue'}}>Reload Captcha</a></div></div>);
 };
 
  

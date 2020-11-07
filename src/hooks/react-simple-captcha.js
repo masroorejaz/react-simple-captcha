@@ -58,15 +58,18 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
 
 };
 
-export const loadCanvas = () => {
-    return (<div><canvas id="canv"></canvas><div><a onClick={() => loadcaptchaenginge(captcha_number)} style={{ cursor: 'pointer', color: 'blue'}}>Reload Captcha</a></div></div>);
+export class LoadCanvasTemplate extends React.Component {
+    render() {
+        return <div><canvas id="canv"></canvas><div><a onClick={() => loadcaptchaenginge(captcha_number)} style={{ cursor: 'pointer', color: 'blue' }}>Reload Captcha</a></div></div>
+    }
 };
 
+export class LoadCanvasTemplateNoReload extends React.Component {
+    render() {
+        return <div><canvas id="canv"></canvas><div></div></div>
+    }
+};
  
-
-export const loadCanvasNoReload = () => {
-    return (<div><canvas id="canv"></canvas></div>);
-};
 
 export const validateCaptcha = (userValue,reload=true) => {
     if (userValue != captcha_value) {
@@ -81,7 +84,3 @@ export const validateCaptcha = (userValue,reload=true) => {
         return true;
     }
 };
-
-
- 
- 

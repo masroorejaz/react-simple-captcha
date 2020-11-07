@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { loadcaptchaenginge, loadCanvas, loadCanvasNoReload, validateCaptcha } from './hooks/react-simple-captcha';
+import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from './hooks/react-simple-captcha';
 
 
 
@@ -31,8 +31,11 @@ class CaptchaTest extends Component {
             <div className="container">
                 <div className="form-group">
 
+
+                    
+
                     <div className="col mt-3">
-                        {loadCanvas()}
+                        <LoadCanvasTemplate />
                     </div>
 
                    

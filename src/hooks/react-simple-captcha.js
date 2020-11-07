@@ -59,13 +59,13 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
 };
 
 export const loadCanvas = () => {
-    return (<div className="col mt-3"><canvas id="canv"></canvas><div><a onClick={() => loadcaptchaenginge(captcha_number)} style={{ cursor: 'pointer', color: 'blue'}}>Reload Captcha</a></div></div>);
+    return (<div><canvas id="canv"></canvas><div><a onClick={() => loadcaptchaenginge(captcha_number)} style={{ cursor: 'pointer', color: 'blue'}}>Reload Captcha</a></div></div>);
 };
 
  
 
 export const loadCanvasNoReload = () => {
-    return (<div className="col mt-3"><canvas id="canv"></canvas></div>);
+    return (<div><canvas id="canv"></canvas></div>);
 };
 
 export const validateCaptcha = (userValue,reload=true) => {

@@ -14,10 +14,13 @@ class CaptchaTest extends Component {
 
         if (validateCaptcha(user_captcha)==true) {
             alert('Captcha Matched');
+            loadcaptchaenginge(6); 
+            document.getElementById('captcha').value = "";
         }
 
         else {
             alert('Captcha Does Not Match');
+            document.getElementById('captcha').value = "";
         }
     };
  
@@ -28,7 +31,11 @@ class CaptchaTest extends Component {
             <div className="container">
                 <div className="form-group">
 
-                    {loadCanvas()}
+                    <div className="col mt-3">
+                        {loadCanvas()}
+                    </div>
+
+                   
                     <div className="col mt-3">
                         <div><input placeholder="Enter Captcha Value" id="captcha" name="captcha" type="text"></input></div>
                     </div>

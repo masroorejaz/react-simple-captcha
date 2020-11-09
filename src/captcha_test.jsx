@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from './hooks/react-simple-captcha';
 
 
@@ -35,7 +36,7 @@ class CaptchaTest extends Component {
                     
 
                     <div className="col mt-3">
-                        <LoadCanvasTemplate />
+                        {ReactHtmlParser(LoadCanvasTemplate)}
                     </div>
 
                    

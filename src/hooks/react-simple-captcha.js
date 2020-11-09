@@ -1,5 +1,3 @@
-import React, { Component } from 'react';
-
 let captcha_value = '';
 let captcha_number = '';
 
@@ -54,21 +52,16 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
         ctx.fillText(retVal[i], heigt_num, Math.round(Math.random() * (15 - 12) + 12));
     }
 
-
-
-};
-
-export class LoadCanvasTemplate extends React.Component {
-    render() {
-        return <div><canvas id="canv"></canvas><div><a onClick={() => loadcaptchaenginge(captcha_number)} style={{ cursor: 'pointer', color: 'blue' }}>Reload Captcha</a></div></div>
+    document.getElementById("reload_href").onclick = function () {
+        loadcaptchaenginge(captcha_number)
     }
 };
 
-export class LoadCanvasTemplateNoReload extends React.Component {
-    render() {
-        return <div><canvas id="canv"></canvas><div></div></div>
-    }
-};
+
+
+export const LoadCanvasTemplate = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
+
+export const LoadCanvasTemplateNoReload = '<div><canvas id="canv"></canvas><div><a id=\"reload_href\" ></a></div></div>';
  
 
 export const validateCaptcha = (userValue,reload=true) => {

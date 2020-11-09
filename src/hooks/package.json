@@ -1,0 +1,30 @@
+{
+  "name": "react-simple-captcha",
+  "version": "1.0.0",
+  "description": "A very simple and powerful captcha for ReactJS",
+  "main": "react-simple-captcha.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masroorejaz/react-simple-captcha.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "captcha",
+    "react-captcha",
+    "react-simple-captcha"
+  ],
+  "author": "Masroor Ejaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/masroorejaz/react-simple-captcha/issues"
+  },
+  "homepage": "https://github.com/masroorejaz/react-simple-captcha#readme",
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

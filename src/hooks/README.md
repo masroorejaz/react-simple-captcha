@@ -2,40 +2,22 @@
 
 React Simple Captcha is a very powerful and easy to use captcha for React JS. 
 
- **Demo**   
- Demo can be seen [here](https://react-simple-captcha.herokuapp.com/ "React Simple Captcha Demo").
-
  **Install** 
 ```sh
 $ npm install react-simple-captcha
 ```
+
+**Demo**   
+Demo can be seen [here](https://react-simple-captcha.herokuapp.com/ "React Simple Captcha Demo").
  
  **Usage Guide** 
  
- <p> Just follow these 6 easy steps to use the react simple captcha:</p>
-  
+ <p> Just follow these 4 easy steps to use the react simple captcha:</p>
  
-**react-html-parser**
+
+**react-simple-captcha** 
 
    -  **Step 1:**  
-   
-Install 'react-html-parser'
-
-```sh
-$ npm install react-html-parser
-```
-
- -  **Step 2:**  
-  
-   Import 'react-html-parser'
-
-```sh
-import ReactHtmlParser from 'react-html-parser'; 
-```
- 
- **react-simple-captcha** 
-
-   -  **Step 3:**  
   
   Import all functions from react-simple-captcha
 
@@ -43,14 +25,14 @@ import ReactHtmlParser from 'react-html-parser';
 import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 ```
 
-   -  **Step 4:**  
+   -  **Step 2:**  
   
-Place **LoadCanvasTemplate** or **LoadCanvasTemplateNoReload** *(if you do not want 'Reload Captcha' functionality)* in your render code in the function ReactHtmlParser()
+Place **<LoadCanvasTemplate />** or **<LoadCanvasTemplateNoReload />** *(if you do not want 'Reload Captcha' functionality)* in your render code in the function ReactHtmlParser()
 
    ```sh
  render() {
         return (<div>
-            {ReactHtmlParser(LoadCanvasTemplate)}
+           <LoadCanvasTemplate />
             </div>);
     };
 ```
@@ -60,12 +42,12 @@ Place **LoadCanvasTemplate** or **LoadCanvasTemplateNoReload** *(if you do not w
    ```sh
  render() {
         return (<div>
-            {ReactHtmlParser(LoadCanvasTemplateNoReload)}
+            <LoadCanvasTemplateNoReload />
             </div>);
     };
 ```
 
-   -  **Step 5:**  
+   -  **Step 3:**  
   
 Paste **loadcaptchaenginge(6)** *(You can change 6 to number of captcha charcters you want)* in **componentDidMount**
 
@@ -74,14 +56,15 @@ Paste **loadcaptchaenginge(6)** *(You can change 6 to number of captcha charcter
        loadcaptchaenginge(6); 
     };
 ```
-   -  **Step 6:**  
+   -  **Step 4:**  
   
 Validate captcha by using **validateCaptcha(user_captcha_value)** 
 
    
    ```sh
  doSubmit = () => {
-        let user_captcha_value = document.getElementById('captcha').value;
+<! --   let's assume there is an HTML input text box with id 'user_captcha_input' to get user input -->   
+        let user_captcha_value = document.getElementById('user_captcha_input').value;
 
         if (validateCaptcha(user_captcha_value)==true) {
             alert('Captcha Matched');
@@ -99,7 +82,8 @@ If you don't watch captcha to be reloaded if user enter the wrong value then set
  
  ```sh
  doSubmit = () => {
-        let user_captcha_value = document.getElementById('captcha').value;
+<! --   let's assume there is an HTML input text box with id 'user_captcha_input' to get user input -->    
+        let user_captcha_value = document.getElementById('user_captcha_input').value;
 
         if (validateCaptcha(user_captcha_value, false)==true) {
             alert('Captcha Matched');
@@ -118,8 +102,8 @@ Listed are all the options available for react-simple-captcha
 
 | Name | Description |
 | ------ | ------ |
-| **LoadCanvasTemplate** | It will load the captcha **with 'Reload Captcha'** functionality. Place between your render code, usage example **{ReactHtmlParser(LoadCanvasTemplate)}** |
-| **LoadCanvasTemplateNoReload** | It will load the captcha **without 'Reload Captcha'** functionality. Place between your render code, usage example **{ReactHtmlParser(LoadCanvasTemplateNoReload)}**  |
+| **< LoadCanvasTemplate />** | It will load the captcha **with 'Reload Captcha'** functionality. Place between your render code, usage example **< LoadCanvasTemplate />** |
+| **< LoadCanvasTemplateNoReload />** | It will load the captcha **without 'Reload Captcha'** functionality. Place between your render code, usage example **< LoadCanvasTemplateNoReload />**  |
 | **loadcaptchaenginge(*Number_Of_Captcha_Charcters*);** | Simply paste it in **componentDidMount()**. Pass number of captcha characters you want to display. |
 | **validateCaptcha(*User_Submitted_Value*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Also will reload captcha if user submitted value is *false*  |
 | **validateCaptcha(*User_Submitted_Value*, *false*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Will not reload captcha if user submitted value is *false*  |
@@ -129,7 +113,6 @@ Let's create a class name **CaptchaTest** with react simple captcha functionalit
 
  ```sh
 import React, { Component } from 'react';
-import ReactHtmlParser from 'react-html-parser'; 
 import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
 
@@ -141,17 +124,17 @@ class CaptchaTest extends Component {
     };
 
     doSubmit = () => {
-        let user_captcha = document.getElementById('captcha').value;
+        let user_captcha = document.getElementById('user_captcha_input').value;
 
         if (validateCaptcha(user_captcha)==true) {
             alert('Captcha Matched');
             loadcaptchaenginge(6); 
-            document.getElementById('captcha').value = "";
+            document.getElementById('user_captcha_input').value = "";
         }
 
         else {
             alert('Captcha Does Not Match');
-            document.getElementById('captcha').value = "";
+            document.getElementById('user_captcha_input').value = "";
         }
     };
  
@@ -163,11 +146,11 @@ class CaptchaTest extends Component {
                 <div className="form-group">
 
                     <div className="col mt-3">
-                        {ReactHtmlParser(LoadCanvasTemplate)}
+                        <LoadCanvasTemplate />
                     </div>
 
                     <div className="col mt-3">
-                        <div><input placeholder="Enter Captcha Value" id="captcha" name="captcha" type="text"></input></div>
+                        <div><input placeholder="Enter Captcha Value" id="user_captcha_input" name="user_captcha_input" type="text"></input></div>
                     </div>
 
                     <div className="col mt-3">
@@ -203,3 +186,4 @@ react-simple-captcha is licensed under the [MIT license](https://opensource.org/
 **Name:** Masroor Ejaz  
 **Linkedin:** https://www.linkedin.com/in/masroorejaz/  
 **Twitter:** https://twitter.com/masroorejaz  
+**Note:** Feel free to contact me it you have any questions!

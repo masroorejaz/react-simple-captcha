@@ -35,7 +35,7 @@ class CaptchaTest extends Component {
                     
 
                     <div className="col mt-3">
-                        < LoadCanvasTemplate />
+                        <LoadCanvasTemplate />
                     </div>
 
                    

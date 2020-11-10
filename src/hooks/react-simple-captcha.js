@@ -1,5 +1,10 @@
+import { Component } from 'react';
+import ReactHtmlParser from 'react-html-parser';
+
 let captcha_value = '';
 let captcha_number = '';
+let LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
+let LoadCanvasTemplateNoReload_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\"></a></div></div>";;
 
 
 export const loadcaptchaenginge = (numberOfCharacters) => {
@@ -34,10 +39,10 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
     let lines = text.split('\n');
     let lineLengthOrder = lines.slice(0).sort(function (a, b) {
         return b.length - a.length;
-    }); 
-    ctx.canvas.width = parseInt(length)*25;
+    });
+    ctx.canvas.width = parseInt(length) * 25;
     ctx.canvas.height = (lines.length * lineheight);
-     
+
 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -59,21 +64,37 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
 
 
 
-export const LoadCanvasTemplate = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
+//export const LoadCanvasTemplate = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
 
-export const LoadCanvasTemplateNoReload = '<div><canvas id="canv"></canvas><div><a id=\"reload_href\" ></a></div></div>';
- 
+//export const LoadCanvasTemplateNoReload = '<div><canvas id="canv"></canvas><div><a id=\"reload_href\" ></a></div></div>';
 
-export const validateCaptcha = (userValue,reload=true) => {
+
+export const validateCaptcha = (userValue, reload = true) => {
     if (userValue != captcha_value) {
         if (reload == true) {
             loadcaptchaenginge(captcha_number);
         }
-       
+
         return false;
     }
 
     else {
         return true;
     }
+};
+
+export class LoadCanvasTemplate extends Component {
+
+    render() {
+        return (ReactHtmlParser(LoadCanvasTemplate_HTML));
+    }
+
+};
+
+export class LoadCanvasTemplateNoReload extends Component {
+
+    render() {
+        return (ReactHtmlParser(LoadCanvasTemplateNoReload_HTML));
+    }
+
 };

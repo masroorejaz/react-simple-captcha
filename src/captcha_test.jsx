@@ -1,27 +1,26 @@
-import React, { Component } from 'react';
-import ReactHtmlParser from 'react-html-parser';
-import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from './hooks/react-simple-captcha';
+import React, { Component } from 'react'; 
+import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
 
 
 class CaptchaTest extends Component {
 
     componentDidMount () {
-       loadcaptchaenginge(6); 
+      loadcaptchaenginge(6); 
     };
 
     doSubmit = () => {
-        let user_captcha = document.getElementById('captcha').value;
+        let user_captcha = document.getElementById('user_captcha_input').value;
 
         if (validateCaptcha(user_captcha)==true) {
             alert('Captcha Matched');
             loadcaptchaenginge(6); 
-            document.getElementById('captcha').value = "";
+            document.getElementById('user_captcha_input').value = "";
         }
 
         else {
             alert('Captcha Does Not Match');
-            document.getElementById('captcha').value = "";
+            document.getElementById('user_captcha_input').value = "";
         }
     };
  
@@ -36,12 +35,12 @@ class CaptchaTest extends Component {
                     
 
                     <div className="col mt-3">
-                        {ReactHtmlParser(LoadCanvasTemplate)}
+                        < LoadCanvasTemplate />
                     </div>
 
                    
                     <div className="col mt-3">
-                        <div><input placeholder="Enter Captcha Value" id="captcha" name="captcha" type="text"></input></div>
+                        <div><input placeholder="Enter Captcha Value" id="user_captcha_input" name="user_captcha_input" type="text"></input></div>
                     </div>
 
                     <div className="col mt-3">

@@ -64,11 +64,6 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
 
 
 
-//export const LoadCanvasTemplate = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
-
-//export const LoadCanvasTemplateNoReload = '<div><canvas id="canv"></canvas><div><a id=\"reload_href\" ></a></div></div>';
-
-
 export const validateCaptcha = (userValue, reload = true) => {
     if (userValue != captcha_value) {
         if (reload == true) {

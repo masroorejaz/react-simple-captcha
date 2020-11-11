@@ -1,12 +1,12 @@
 import React, { Component } from 'react'; 
-import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
 
 
 class CaptchaTest extends Component {
 
     componentDidMount () {
-      loadcaptchaenginge(6); 
+        loadCaptchaEnginge(6); 
     };
 
     doSubmit = () => {
@@ -14,7 +14,7 @@ class CaptchaTest extends Component {
 
         if (validateCaptcha(user_captcha)==true) {
             alert('Captcha Matched');
-            loadcaptchaenginge(6); 
+            loadCaptchaEnginge(6); 
             document.getElementById('user_captcha_input').value = "";
         }
 
@@ -35,7 +35,7 @@ class CaptchaTest extends Component {
                     
 
                     <div className="col mt-3">
-                        <LoadCanvasTemplate />
+                        < LoadCanvasTemplate />
                     </div>
 
                    

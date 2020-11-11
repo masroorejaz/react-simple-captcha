@@ -15,19 +15,17 @@ Demo can be seen [here](https://react-simple-captcha.herokuapp.com/ "React Simpl
  <p> Just follow these 4 easy steps to use the react simple captcha:</p>
  
 
-**react-simple-captcha** 
-
    -  **Step 1:**  
   
   Import all functions from react-simple-captcha
 
   ```sh
-import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 ```
 
    -  **Step 2:**  
   
-Place **<LoadCanvasTemplate />** or **<LoadCanvasTemplateNoReload />** *(if you do not want 'Reload Captcha' functionality)* in your render code in the function ReactHtmlParser()
+Place **< LoadCanvasTemplate />** or **< LoadCanvasTemplateNoReload />** *(if you do not want 'Reload Captcha' functionality)* in your render code
 
    ```sh
  render() {
@@ -49,11 +47,11 @@ Place **<LoadCanvasTemplate />** or **<LoadCanvasTemplateNoReload />** *(if you 
 
    -  **Step 3:**  
   
-Paste **loadcaptchaenginge(6)** *(You can change 6 to number of captcha charcters you want)* in **componentDidMount**
+Paste **loadCaptchaEnginge(6)** *(You can change 6 to number of captcha charcters you want)* in **componentDidMount**
 
    ```sh
  componentDidMount () {
-       loadcaptchaenginge(6); 
+       loadCaptchaEnginge(6); 
     };
 ```
    -  **Step 4:**  
@@ -104,7 +102,7 @@ Listed are all the options available for react-simple-captcha
 | ------ | ------ |
 | **< LoadCanvasTemplate />** | It will load the captcha **with 'Reload Captcha'** functionality. Place between your render code, usage example **< LoadCanvasTemplate />** |
 | **< LoadCanvasTemplateNoReload />** | It will load the captcha **without 'Reload Captcha'** functionality. Place between your render code, usage example **< LoadCanvasTemplateNoReload />**  |
-| **loadcaptchaenginge(*Number_Of_Captcha_Charcters*);** | Simply paste it in **componentDidMount()**. Pass number of captcha characters you want to display. |
+| **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*);** | Simply paste it in **componentDidMount()**. Pass number of captcha characters you want to display. |
 | **validateCaptcha(*User_Submitted_Value*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Also will reload captcha if user submitted value is *false*  |
 | **validateCaptcha(*User_Submitted_Value*, *false*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Will not reload captcha if user submitted value is *false*  |
  
@@ -113,14 +111,14 @@ Let's create a class name **CaptchaTest** with react simple captcha functionalit
 
  ```sh
 import React, { Component } from 'react';
-import { loadcaptchaenginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
 
 
 class CaptchaTest extends Component {
 
     componentDidMount () {
-       loadcaptchaenginge(6); 
+       loadCaptchaEnginge(6); 
     };
 
     doSubmit = () => {
@@ -128,7 +126,7 @@ class CaptchaTest extends Component {
 
         if (validateCaptcha(user_captcha)==true) {
             alert('Captcha Matched');
-            loadcaptchaenginge(6); 
+            loadCaptchaEnginge(6); 
             document.getElementById('user_captcha_input').value = "";
         }
 

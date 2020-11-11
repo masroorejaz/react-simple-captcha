@@ -7,7 +7,7 @@ let LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"re
 let LoadCanvasTemplateNoReload_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\"></a></div></div>";;
 
 
-export const loadcaptchaenginge = (numberOfCharacters) => {
+export const loadCaptchaEnginge = (numberOfCharacters) => {
 
     captcha_number = numberOfCharacters;
     let length = parseInt(numberOfCharacters),
@@ -20,7 +20,6 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
     }
 
     let captcha = retVal;
-    //   document.getElementById('captcha_div').innerHTML = captcha;
 
     captcha_value = captcha;
 
@@ -58,16 +57,14 @@ export const loadcaptchaenginge = (numberOfCharacters) => {
     }
 
     document.getElementById("reload_href").onclick = function () {
-        loadcaptchaenginge(captcha_number)
+        loadCaptchaEnginge(captcha_number)
     }
 };
-
-
 
 export const validateCaptcha = (userValue, reload = true) => {
     if (userValue != captcha_value) {
         if (reload == true) {
-            loadcaptchaenginge(captcha_number);
+            loadCaptchaEnginge(captcha_number);
         }
 
         return false;

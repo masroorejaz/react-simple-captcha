@@ -3,7 +3,8 @@ import ReactHtmlParser from 'react-html-parser';
 
 let captcha_value = '';
 let captcha_number = '';
-let LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
+let reloadText = "{{reloadText}}";
+let LoadCanvasTemplate_HTML = `<div><canvas id="canv"></canvas><div><a id="reload_href"  style="cursor: pointer; color: blue">${reloadText}</a></div></div>`;
 let LoadCanvasTemplateNoReload_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\"></a></div></div>";;
 
 
@@ -78,7 +79,8 @@ export const validateCaptcha = (userValue, reload = true) => {
 export class LoadCanvasTemplate extends Component {
 
     render() {
-        return (ReactHtmlParser(LoadCanvasTemplate_HTML));
+        let text = this.props.reloadText ? this.props.reloadText : "Reload Captcha";
+        return (ReactHtmlParser(LoadCanvasTemplate_HTML.replace(reloadText, text)));
     }
 
 };

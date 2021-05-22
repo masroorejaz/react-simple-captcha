@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import CaptchaTest from './captcha_test';
 import * as serviceWorker from './serviceWorker';
 
+
+// kjjjoj
 ReactDOM.render(
     <BrowserRouter>
         <CaptchaTest />

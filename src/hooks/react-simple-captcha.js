@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 
 let captcha_value = '';
 let captcha_number = '';
@@ -75,18 +75,10 @@ export const validateCaptcha = (userValue, reload = true) => {
     }
 };
 
-export class LoadCanvasTemplate extends Component {
-
-    render() {
-        return (ReactHtmlParser(LoadCanvasTemplate_HTML));
-    }
-
+export const LoadCanvasTemplate: React.FC<string> = () => {
+    return (parse(LoadCanvasTemplate_HTML));
 };
 
-export class LoadCanvasTemplateNoReload extends Component {
-
-    render() {
-        return (ReactHtmlParser(LoadCanvasTemplateNoReload_HTML));
-    }
-
+export const LoadCanvasTemplateNoReload: React.FC<string> = () => {
+    return (parse(LoadCanvasTemplateNoReload_HTML))    
 };

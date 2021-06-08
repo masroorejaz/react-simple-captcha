@@ -1,70 +1,187 @@
-# Getting Started with Create React App
+# React Simple Captcha
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Simple Captcha is a very powerful and easy to use captcha for React JS. 
 
-## Available Scripts
+ **Install** 
+```sh
+$ npm install react-simple-captcha
+```
 
-In the project directory, you can run:
+**Demo**   
+Demo can be seen [here](https://react-simple-captcha.herokuapp.com/ "React Simple Captcha Demo").
+ 
+ **Usage Guide** 
+ 
+ <p> Just follow these 4 easy steps to use the react simple captcha:</p>
+ 
 
-### `yarn start`
+   -  **Step 1:**  
+  
+  Import all functions from react-simple-captcha
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ```sh
+import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   -  **Step 2:**  
+  
+Place **< LoadCanvasTemplate />** or **< LoadCanvasTemplateNoReload />** *(if you do not want 'Reload Captcha' functionality)* in your render code
 
-### `yarn test`
+   ```sh
+ render() {
+        return (<div>
+           <LoadCanvasTemplate />
+            </div>);
+    };
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ **OR**
+ 
+   ```sh
+ render() {
+        return (<div>
+            <LoadCanvasTemplateNoReload />
+            </div>);
+    };
+```
 
-### `yarn build`
+   -  **Step 3:**  
+  
+Paste **loadCaptchaEnginge(6)** *(You can change 6 to number of captcha charcters you want)* in **componentDidMount**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```sh
+ componentDidMount () {
+       loadCaptchaEnginge(6); 
+    };
+```
+   -  **Step 4:**  
+  
+Validate captcha by using **validateCaptcha(user_captcha_value)** 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   
+   ```sh
+ doSubmit = () => {
+<! --   let's assume there is an HTML input text box with id 'user_captcha_input' to get user input -->   
+        let user_captcha_value = document.getElementById('user_captcha_input').value;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        if (validateCaptcha(user_captcha_value)==true) {
+            alert('Captcha Matched');
+        }
 
-### `yarn eject`
+        else {
+            alert('Captcha Does Not Match');
+        }
+    };
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**OR**  
+If you don't watch captcha to be reloaded if user enter the wrong value then set second parameter to *false* **validateCaptcha(user_captcha_value, false)**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ 
+ ```sh
+ doSubmit = () => {
+<! --   let's assume there is an HTML input text box with id 'user_captcha_input' to get user input -->    
+        let user_captcha_value = document.getElementById('user_captcha_input').value;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+        if (validateCaptcha(user_captcha_value, false)==true) {
+            alert('Captcha Matched');
+        }
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+        else {
+            alert('Captcha Does Not Match');
+        }
+    };
+```
 
-## Learn More
+ 
+### Options
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Listed are all the options available for react-simple-captcha
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Name | Description |
+| ------ | ------ |
+| **< LoadCanvasTemplate />** | It will load the captcha **with 'Reload Captcha'** functionality. Place between your render code, usage example **< LoadCanvasTemplate />** |
+| **< LoadCanvasTemplateNoReload />** | It will load the captcha **without 'Reload Captcha'** functionality. Place between your render code, usage example **< LoadCanvasTemplateNoReload />**  |
+| **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*);** | Simply paste it in **componentDidMount()**. Pass number of captcha characters you want to display. |
+| **validateCaptcha(*User_Submitted_Value*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Also will reload captcha if user submitted value is *false*  |
+| **validateCaptcha(*User_Submitted_Value*, *false*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Will not reload captcha if user submitted value is *false*  |
+ 
+### Example
+Let's create a class name **CaptchaTest** with react simple captcha functionality:
 
-### Code Splitting
+ ```sh
+import React, { Component } from 'react';
+import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+class CaptchaTest extends Component {
 
-### Making a Progressive Web App
+    componentDidMount () {
+       loadCaptchaEnginge(6); 
+    };
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    doSubmit = () => {
+        let user_captcha = document.getElementById('user_captcha_input').value;
 
-### Advanced Configuration
+        if (validateCaptcha(user_captcha)==true) {
+            alert('Captcha Matched');
+            loadCaptchaEnginge(6); 
+            document.getElementById('user_captcha_input').value = "";
+        }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+        else {
+            alert('Captcha Does Not Match');
+            document.getElementById('user_captcha_input').value = "";
+        }
+    };
+ 
+    render() {
+         
 
-### Deployment
+        return (<div>
+            <div className="container">
+                <div className="form-group">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+                    <div className="col mt-3">
+                        <LoadCanvasTemplate />
+                    </div>
 
-### `yarn build` fails to minify
+                    <div className="col mt-3">
+                        <div><input placeholder="Enter Captcha Value" id="user_captcha_input" name="user_captcha_input" type="text"></input></div>
+                    </div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+                    <div className="col mt-3">
+                        <div><button class="btn btn-primary" onClick={() => this.doSubmit()}>Submit</button></div>
+                    </div>
+                      
+                </div>
+
+            </div>
+        </div>);
+    };
+}
+
+export default CaptchaTest;
+```
+Import **CaptchaTest** in index.js
+ ```sh
+import CaptchaTest from './captcha_test'; 
+```
+Now replace **ReactDOM.render** with
+ ```sh
+ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
+```
+
+### Browser support
+Works in every modern browser which has support for [canvas element](https://caniuse.com/canvas-text "canvas element").
+
+### License
+react-simple-captcha is licensed under the [MIT license](https://opensource.org/licenses/MIT "MIT license").
+
+### Author Profile
+ 
+**Name:** Masroor Ejaz  
+**Linkedin:** https://www.linkedin.com/in/masroorejaz/  
+**Twitter:** https://twitter.com/masroorejaz  
+**Note:** Feel free to contact me it you have any questions!

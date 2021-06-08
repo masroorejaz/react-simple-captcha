@@ -2,7 +2,7 @@
 
 React Simple Captcha is a very powerful and easy to use captcha for React JS. 
 
- **How To Install** 
+ **Install** 
 ```sh
 $ npm install react-simple-captcha
 ```

@@ -75,7 +75,7 @@ Validate captcha by using **validateCaptcha(user_captcha_value)**
 ```
 
 **OR**  
-If you don't watch captcha to be reloaded if user enter the wrong value then set second parameter to *false* **validateCaptcha(user_captcha_value, false)**
+If you don't want captcha to be reloaded if user enter the wrong value then set second parameter to *false* **validateCaptcha(user_captcha_value, false)**
 
  
  ```sh
@@ -105,6 +105,15 @@ Listed are all the options available for react-simple-captcha
 | **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*);** | Simply paste it in **componentDidMount()**. Pass number of captcha characters you want to display. |
 | **validateCaptcha(*User_Submitted_Value*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Also will reload captcha if user submitted value is *false*  |
 | **validateCaptcha(*User_Submitted_Value*, *false*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Will not reload captcha if user submitted value is *false*  |
+  
+### Version 7.0.1 Changes  
+  
+    
+| **Version 7.0.1 Updates** | **All of these changes are optionals** |
+| ------ | ------ |
+| **< LoadCanvasTemplate reloadText="Reload My Captcha" />** | **Optional** In case you want to change the "Reload Captcha" with your own text |
+| **< LoadCanvasTemplate reloadColor="red" />** | **Optional** In case you want to change the blue color of "Reload Captcha" |
+| **< LoadCanvasTemplate reloadText="Reload My Captcha" reloadColor="red" />** | **Optional** In case you want to change the "Reload Captcha" text and it's blue color |
  
 ### Example
 Let's create a class name **CaptchaTest** with react simple captcha functionality:

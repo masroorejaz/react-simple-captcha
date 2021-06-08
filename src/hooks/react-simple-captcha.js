@@ -78,6 +78,30 @@ export const validateCaptcha = (userValue, reload = true) => {
 export class LoadCanvasTemplate extends Component {
 
     render() {
+        let reload_text = "";
+        let reload_color = "";
+        LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
+
+        if (this.props.reloadText) {
+            reload_text = this.props.reloadText;
+
+
+        }
+
+        if (this.props.reloadColor) {
+            reload_color = this.props.reloadColor;
+        }
+
+        if (reload_text == "") {
+            reload_text = "Reload Captach";
+        }
+
+        if (reload_color == "") {
+            reload_color = "blue";
+        }
+
+        LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: " + reload_color + "\">" + reload_text + "</a></div></div>";
+
         return (ReactHtmlParser(LoadCanvasTemplate_HTML));
     }
 

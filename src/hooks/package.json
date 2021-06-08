@@ -1,6 +1,6 @@
 {
   "name": "react-simple-captcha",
-  "version": "6.1.0",
+  "version": "7.0.1",
   "description": "A very simple and powerful captcha for ReactJS",
   "main": "react-simple-captcha.js",
   "scripts": {

@@ -1,7 +1,7 @@
 {
   "name": "react-simple-captcha",
-  "version": "7.0.1",
-  "description": "A very simple and powerful captcha for ReactJS",
+  "version": "8.0.0",
+  "description": "A very simple,powerful and highly customizable captcha for ReactJS",
   "main": "react-simple-captcha.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

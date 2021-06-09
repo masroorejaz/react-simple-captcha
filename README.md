@@ -1,6 +1,6 @@
 # React Simple Captcha
 
-React Simple Captcha is a very powerful and easy to use captcha for React JS. 
+React Simple Captcha is a very powerful, highly customizable and easy to use captcha for React JS. 
 
  **Install** 
 ```sh
@@ -106,14 +106,18 @@ Listed are all the options available for react-simple-captcha
 | **validateCaptcha(*User_Submitted_Value*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Also will reload captcha if user submitted value is *false*  |
 | **validateCaptcha(*User_Submitted_Value*, *false*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Will not reload captcha if user submitted value is *false*  |
   
-### Version 7.0.1 Changes  
+### Optional Changes
   
     
-| **Version 7.0.1 Updates** | **All of these changes are optionals** |
+| **Options** | **All of these changes are optionals** |
 | ------ | ------ |
-| **< LoadCanvasTemplate reloadText="Reload My Captcha" />** | **Optional** In case you want to change the "Reload Captcha" with your own text |
-| **< LoadCanvasTemplate reloadColor="red" />** | **Optional** In case you want to change the blue color of "Reload Captcha" |
-| **< LoadCanvasTemplate reloadText="Reload My Captcha" reloadColor="red" />** | **Optional** In case you want to change the "Reload Captcha" text and it's blue color |
+| **< LoadCanvasTemplate reloadText="Reload My Captcha" />** | If you want to change the **"Reload Captcha"** with your own text |
+| **< LoadCanvasTemplate reloadColor="red" />** | If you want to change the blue color of **"Reload Captcha"** |
+| **< LoadCanvasTemplate reloadText="Reload My Captcha" reloadColor="red" />** | If you want to change the **"Reload Captcha"** text and it's blue color |
+| **< LoadCanvasTemplate reloadText="Reload My Captcha" reloadColor="red" />** | If you want to change the **"Reload Captcha"** text and it's blue color |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*);**  | If you want to change the background color from black to your custom color. Example Syntax to change the background color to red use: **loadCaptchaEnginge(6,'red');** |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the font color from white to your custom color. Example Syntax to change the font color to blue use: **loadCaptchaEnginge(6,'','blue');** |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the both background and font color. Example Syntax to change the background color to white and font color to black use: **loadCaptchaEnginge(6,'white','black');** |
  
 ### Example
 Let's create a class name **CaptchaTest** with react simple captcha functionality:

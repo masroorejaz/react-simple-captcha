@@ -6,7 +6,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 class CaptchaTest extends Component {
 
     componentDidMount () {
-        loadCaptchaEnginge(6); 
+        loadCaptchaEnginge(6,'white','black'); 
     };
 
     doSubmit = () => {

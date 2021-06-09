@@ -7,7 +7,7 @@ let LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"re
 let LoadCanvasTemplateNoReload_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\"></a></div></div>";;
 
 
-export const loadCaptchaEnginge = (numberOfCharacters) => {
+export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'black', fontColor = 'white') => {
 
     captcha_number = numberOfCharacters;
     let length = parseInt(numberOfCharacters),
@@ -34,6 +34,7 @@ export const loadCaptchaEnginge = (numberOfCharacters) => {
     let x = 12.5;
     let y = 15;
     let lineheight = 30;
+
     let canvas_height = (parseInt(length) - parseInt(length_height_canvas)) * 20;
     let lines = text.split('\n');
     let lineLengthOrder = lines.slice(0).sort(function (a, b) {
@@ -42,12 +43,16 @@ export const loadCaptchaEnginge = (numberOfCharacters) => {
     ctx.canvas.width = parseInt(length) * 25;
     ctx.canvas.height = (lines.length * lineheight);
 
-
+    ctx.fillStyle = backgroundColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
 
     ctx.textBaseline = "middle";
     ctx.font = "italic 20px Arial";
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = fontColor;
+
+
+
 
     let num = 0;
     for (let i = 0; i < parseInt(length); i++) {
@@ -59,6 +64,7 @@ export const loadCaptchaEnginge = (numberOfCharacters) => {
     document.getElementById("reload_href").onclick = function () {
         loadCaptchaEnginge(captcha_number)
     }
+
 };
 
 export const validateCaptcha = (userValue, reload = true) => {
@@ -80,7 +86,7 @@ export class LoadCanvasTemplate extends Component {
     render() {
         let reload_text = "";
         let reload_color = "";
-        LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
+        LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\" style=\"background-color: blue;\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
 
         if (this.props.reloadText) {
             reload_text = this.props.reloadText;

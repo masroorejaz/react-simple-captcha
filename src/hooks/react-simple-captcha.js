@@ -3,6 +3,7 @@ import ReactHtmlParser from "react-html-parser";
 
 let captcha_value = "";
 let captcha_number = "";
+let char_map = "";
 let LoadCanvasTemplate_HTML =
   '<div><canvas id="canv"></canvas><div><a id="reload_href"  style="cursor: pointer; color: blue">Reload Captcha</a></div></div>';
 let LoadCanvasTemplateNoReload_HTML =
@@ -10,11 +11,12 @@ let LoadCanvasTemplateNoReload_HTML =
 
 export const loadCaptchaEnginge = (numberOfCharacters, charMap = "all", backgroundColor = "black", fontColor = "white") => {
   captcha_number = numberOfCharacters;
+  char_map = charMap;
   let length = parseInt(numberOfCharacters);
   let charset = "";
-  if (charMap === "UPP") {
+  if (char_map === "UPP") {
     charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  } else if (charMap === "low") {
+  } else if (char_map === "low") {
     charset = "abcdefghijklmnopqrstuvwxyz0123456789";
   } else {
     charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -65,14 +67,14 @@ export const loadCaptchaEnginge = (numberOfCharacters, charMap = "all", backgrou
   }
 
   document.getElementById("reload_href").onclick = function () {
-    loadCaptchaEnginge(captcha_number);
+    loadCaptchaEnginge(captcha_number, char_map);
   };
 };
 
 export const validateCaptcha = (userValue, reload = true) => {
   if (userValue != captcha_value) {
     if (reload == true) {
-      loadCaptchaEnginge(captcha_number);
+      loadCaptchaEnginge(captcha_number, char_map);
     }
 
     return false;

@@ -3,18 +3,31 @@ import ReactHtmlParser from 'react-html-parser';
 
 let captcha_value = '';
 let captcha_number = '';
+let backgroundColor_value = '';
+let fontColor_value = '';
+let charMap_value = '';
 let LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\">Reload Captcha</a></div></div>";
 let LoadCanvasTemplateNoReload_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\"></a></div></div>";;
 
 
-export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'black', fontColor = 'white') => {
+export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white', fontColor = 'black', charMap = '') => {
 
+    backgroundColor_value = backgroundColor;
+    fontColor_value = fontColor;
+    charMap_value = charMap;
     captcha_number = numberOfCharacters;
-    let length = parseInt(numberOfCharacters),
+    let retVal = "";
+    let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    if (charMap === "upper") {
+        charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    } else if (charMap === "lower") {
+        charset = "abcdefghijklmnopqrstuvwxyz0123456789";
+    }
+
+    let length = parseInt(numberOfCharacters);
 
 
-        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-        retVal = "";
+
     for (let i = 0, n = charset.length; i < length; ++i) {
         retVal += charset.charAt(Math.floor(Math.random() * n));
     }
@@ -62,7 +75,7 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'black'
     }
 
     document.getElementById("reload_href").onclick = function () {
-        loadCaptchaEnginge(captcha_number)
+        loadCaptchaEnginge(captcha_number, backgroundColor, fontColor, charMap);
     }
 
 };
@@ -70,7 +83,7 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'black'
 export const validateCaptcha = (userValue, reload = true) => {
     if (userValue != captcha_value) {
         if (reload == true) {
-            loadCaptchaEnginge(captcha_number);
+            loadCaptchaEnginge(captcha_number, backgroundColor_value, fontColor_value, charMap_value);
         }
 
         return false;

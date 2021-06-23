@@ -114,10 +114,11 @@ Listed are all the options available for react-simple-captcha
 | **< LoadCanvasTemplate reloadText="Reload My Captcha" />** | If you want to change the **"Reload Captcha"** with your own text |
 | **< LoadCanvasTemplate reloadColor="red" />** | If you want to change the blue color of **"Reload Captcha"** |
 | **< LoadCanvasTemplate reloadText="Reload My Captcha" reloadColor="red" />** | If you want to change the **"Reload Captcha"** text and it's blue color |
-| **< LoadCanvasTemplate reloadText="Reload My Captcha" reloadColor="red" />** | If you want to change the **"Reload Captcha"** text and it's blue color |
 |  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*);**  | If you want to change the background color from black to your custom color. Example Syntax to change the background color to red use: **loadCaptchaEnginge(6,'red');** |
 |  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the font color from white to your custom color. Example Syntax to change the font color to blue use: **loadCaptchaEnginge(6,'','blue');** |
 |  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the both background and font color. Example Syntax to change the background color to white and font color to black use: **loadCaptchaEnginge(6,'white','black');** |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Upper_Characters_Only*);**  | If you want only upper characters and number use **loadCaptchaEnginge(6,'','','upper');** |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Lower_Characters_Only*);**  | If you want only lower characters and number use **loadCaptchaEnginge(6,'','','lower');** |
  
 ### Example
 Let's create a class name **CaptchaTest** with react simple captcha functionality:
@@ -185,6 +186,9 @@ Now replace **ReactDOM.render** with
  ```sh
 ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
 ```
+
+### Rate react-simple-captcha
+Kindly rate react-simple-captcha at the following [link](https://openbase.com/js/react-simple-captcha#rate "link"). It will only take a few minutes. Thank you :)
 
 ### Browser support
 Works in every modern browser which has support for [canvas element](https://caniuse.com/canvas-text "canvas element").

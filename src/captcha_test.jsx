@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+ 
 
 
 
@@ -30,9 +31,7 @@ class CaptchaTest extends Component {
         return (<div>
             <div className="container">
                 <div className="form-group">
-
-
-                    
+                     
 
                     <div className="col mt-3">
                         < LoadCanvasTemplate reloadText="Reload The Damn Captcha" reloadColor="red" />

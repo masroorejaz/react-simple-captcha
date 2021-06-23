@@ -186,6 +186,9 @@ Now replace **ReactDOM.render** with
 ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
 ```
 
+### Rate react-simple-captcha
+Kindly rate react-simple-captcha at the following [link](https://openbase.com/js/react-simple-captcha#rate "link"). It will only take a few minutes. Thank you :)
+
 ### Browser support
 Works in every modern browser which has support for [canvas element](https://caniuse.com/canvas-text "canvas element").
 

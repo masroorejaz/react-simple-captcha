@@ -112,7 +112,7 @@ export class LoadCanvasTemplate extends Component {
         }
 
         if (reload_text == "") {
-            reload_text = "Reload Captach";
+            reload_text = "Reload Captcha";
         }
 
         if (reload_color == "") {

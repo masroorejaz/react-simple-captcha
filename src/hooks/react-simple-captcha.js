@@ -23,6 +23,12 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
     } else if (charMap === "lower") {
         charset = "abcdefghijklmnopqrstuvwxyz0123456789";
     }
+    else if (charMap === "numbers") {
+        charset = "0123456789";
+    }
+    else if (charMap === "special_char") {
+        charset = "~`!@#$%^&*()_+-=[]{}\|:'<>,.?/";
+    }
 
     let length = parseInt(numberOfCharacters);
 

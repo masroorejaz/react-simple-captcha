@@ -117,8 +117,10 @@ Listed are all the options available for react-simple-captcha
 |  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*);**  | If you want to change the background color from black to your custom color. Example Syntax to change the background color to red use: **loadCaptchaEnginge(6,'red');** |
 |  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the font color from white to your custom color. Example Syntax to change the font color to blue use: **loadCaptchaEnginge(6,'','blue');** |
 |  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the both background and font color. Example Syntax to change the background color to white and font color to black use: **loadCaptchaEnginge(6,'white','black');** |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Upper_Characters_Only*);**  | If you want only upper characters and number use **loadCaptchaEnginge(6,'','','upper');** |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Lower_Characters_Only*);**  | If you want only lower characters and number use **loadCaptchaEnginge(6,'','','lower');** |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Upper_Characters_Only*);**  | If you want only upper characters and numbers use **loadCaptchaEnginge(6,'','','upper');** |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Lower_Characters_Only*);**  | If you want only lower characters and numbers use **loadCaptchaEnginge(6,'','','lower');** |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Numbers*);**  | If you want only numbers use **loadCaptchaEnginge(6,'','','numbers');** |
+|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Special_Characters*);**  | If you want only special characters use **loadCaptchaEnginge(6,'','','special_char');** |
  
 ### Example
 Let's create a class name **CaptchaTest** with react simple captcha functionality:

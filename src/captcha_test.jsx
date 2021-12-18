@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEngine, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
  
 
 
@@ -7,7 +7,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 class CaptchaTest extends Component {
 
     componentDidMount () {
-        loadCaptchaEnginge(6,'white','black'); 
+        loadCaptchaEngine(6,'white','black'); 
     };
 
     doSubmit = () => {
@@ -15,7 +15,7 @@ class CaptchaTest extends Component {
 
         if (validateCaptcha(user_captcha)==true) {
             alert('Captcha Matched');
-            loadCaptchaEnginge(6); 
+            loadCaptchaEngine(6); 
             document.getElementById('user_captcha_input').value = "";
         }
 

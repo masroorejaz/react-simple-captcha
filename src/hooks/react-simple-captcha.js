@@ -10,7 +10,7 @@ let LoadCanvasTemplate_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"re
 let LoadCanvasTemplateNoReload_HTML = "<div><canvas id=\"canv\"></canvas><div><a id=\"reload_href\"  style=\"cursor: pointer; color: blue\"></a></div></div>";;
 
 
-export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white', fontColor = 'black', charMap = '') => {
+export const loadCaptchaEngine = (numberOfCharacters, backgroundColor = 'white', fontColor = 'black', charMap = '') => {
 
     backgroundColor_value = backgroundColor;
     fontColor_value = fontColor;
@@ -81,7 +81,7 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
     }
 
     document.getElementById("reload_href").onclick = function () {
-        loadCaptchaEnginge(captcha_number, backgroundColor, fontColor, charMap);
+        loadCaptchaEngine(captcha_number, backgroundColor, fontColor, charMap);
     }
 
 };
@@ -89,7 +89,7 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
 export const validateCaptcha = (userValue, reload = true) => {
     if (userValue != captcha_value) {
         if (reload == true) {
-            loadCaptchaEnginge(captcha_number, backgroundColor_value, fontColor_value, charMap_value);
+            loadCaptchaEngine(captcha_number, backgroundColor_value, fontColor_value, charMap_value);
         }
 
         return false;

@@ -54,7 +54,7 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
         retVal += charset.charAt(Math.floor(Math.random() * n));
     }
 
-    let captcha = retVal;
+    const captcha = retVal;
     captcha_value = captcha;
 
     const canvas = document.getElementById('canv');

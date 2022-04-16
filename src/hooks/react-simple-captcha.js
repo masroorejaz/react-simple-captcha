@@ -41,22 +41,13 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
     let captcha = retVal;
     captcha_value = captcha;
 
-    let length_height_canvas = Math.round(parseInt(length) / 3);
-
     const canvas = document.getElementById('canv');
     const ctx = canvas.getContext('2d');
-    const img = document.getElementById('image');
 
     const text = captcha;
-    const x = 12.5;
-    const y = 15;
     const lineheight = 30;
 
-    const canvas_height = (parseInt(length) - parseInt(length_height_canvas)) * 20;
     const lines = text.split('\n');
-    const lineLengthOrder = lines.slice(0).sort(function (a, b) {
-        return b.length - a.length;
-    });
     ctx.canvas.width = parseInt(length) * 25;
     ctx.canvas.height = (lines.length * lineheight);
 

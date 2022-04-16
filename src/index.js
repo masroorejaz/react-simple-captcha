@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import CaptchaTest from './captcha_test';
-import * as serviceWorker from './serviceWorker';
 
 
 ReactDOM.render(
@@ -12,4 +11,3 @@ ReactDOM.render(
         <CaptchaTest />
     </BrowserRouter>, document.getElementById('root'));
 
-serviceWorker.unregister();

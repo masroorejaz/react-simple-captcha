@@ -7,8 +7,24 @@ let backgroundColor_value = '';
 let fontColor_value = '';
 let charMap_value = '';
 
-let LoadCanvasTemplate_HTML = `<div><canvas id="canv"></canvas><div><a id="reload_href"  style="cursor: pointer; color: blue">Reload Captcha</a></div></div>`;
-let LoadCanvasTemplateNoReload_HTML = `<div><canvas id="canv"></canvas><div><a id="reload_href"  style="cursor: pointer; color: blue"></a></div></div>`;
+let LoadCanvasTemplate_HTML = `
+<div>
+    <canvas id="canv"></canvas>
+    <div>
+        <a id="reload_href" style="cursor: pointer; color: blue">
+            Reload Captcha
+        </a>
+    </div>
+</div>`;
+
+let LoadCanvasTemplateNoReload_HTML = `
+<div>
+    <canvas id="canv"></canvas>
+    <div>
+        <a id="reload_href" style="cursor: pointer; color: blue">
+        </a>
+    </div>
+</div>`;
 
 
 export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white', fontColor = 'black', charMap = '') => {

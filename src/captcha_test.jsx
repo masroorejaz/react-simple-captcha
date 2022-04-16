@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from './hooks/react-simple-captcha';
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from './hooks/react-simple-captcha';
 
 class CaptchaTest extends Component {
     componentDidMount () {
@@ -17,7 +17,7 @@ class CaptchaTest extends Component {
         }
         else {
             alert('Captcha Does Not Match');
-            
+
             document.getElementById('user_captcha_input').value = "";
         }
     };

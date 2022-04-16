@@ -41,7 +41,7 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
         charset = "0123456789";
     }
     else if (charMap === "special_char") {
-        charset = "~`!@#$%^&*()_+-=[]{}\|:'<>,.?/";
+        charset = "~`!@#$%^&*()_+-=[]{}|:'<>,.?/";
     }
 
     const length = parseInt(numberOfCharacters);

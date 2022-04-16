@@ -43,7 +43,7 @@ class CaptchaTest extends Component {
                     </div>
 
                     <div className="col mt-3">
-                        <div><button class="btn btn-primary" onClick={() => this.doSubmit()}>Submit</button></div>
+                        <div><button className="btn btn-primary" onClick={() => this.doSubmit()}>Submit</button></div>
                     </div>
                       
                 </div>

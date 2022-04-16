@@ -80,8 +80,8 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
 };
 
 export const validateCaptcha = (userValue, reload = true) => {
-    if (userValue != captcha_value) {
-        if (reload == true) {
+    if (userValue !== captcha_value) {
+        if (reload) {
             loadCaptchaEnginge(captcha_number, backgroundColor_value, fontColor_value, charMap_value);
         }
 

@@ -60,7 +60,7 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
     const lineheight = 30;
 
     const lines = text.split('\n');
-    
+
     ctx.canvas.width = parseInt(length) * 25;
     ctx.canvas.height = (lines.length * lineheight);
 
@@ -77,9 +77,12 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
         const heigt_num = 20 * num;
         ctx.fillText(retVal[i], heigt_num, Math.round(Math.random() * (15 - 12) + 12));
     }
-
-    document.getElementById("reload_href").onclick = function () {
-        loadCaptchaEnginge(captcha_number, backgroundColor, fontColor, charMap);
+    
+    const reloadHref = document.getElementById('reload_href');
+    if(reloadHref) {
+        reloadHref.onclick = function () {
+            loadCaptchaEnginge(captcha_number, backgroundColor, fontColor, charMap);
+        }
     }
 };
 

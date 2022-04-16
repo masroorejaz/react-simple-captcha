@@ -10,87 +10,89 @@ $ npm install react-simple-captcha
 **Demo**   
 Demo can be seen [here](https://react-simple-captcha.herokuapp.com/ "React Simple Captcha Demo").
  
- **Usage Guide** 
+**Usage Guide** 
  
- <p> Just follow these 4 easy steps to use the react simple captcha:</p>
+<p> Just follow these 4 easy steps to use the react simple captcha:</p>
  
 
-   -  **Step 1:**  
+-  **Step 1:**  
   
-  Import all functions from react-simple-captcha
+Import all functions from react-simple-captcha
 
-  ```sh
+```sh
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 ```
 
-   -  **Step 2:**  
+-  **Step 2:**  
   
 Place **< LoadCanvasTemplate />** or **< LoadCanvasTemplateNoReload />** *(if you do not want 'Reload Captcha' functionality)* in your render code
 
-   ```sh
- render() {
-        return (<div>
-           <LoadCanvasTemplate />
-            </div>);
+```js
+render() {
+        return (
+            <div>
+                <LoadCanvasTemplate />
+            </div>
+        );
     };
 ```
 
  **OR**
  
-   ```sh
+```js
  render() {
-        return (<div>
+    return (
+        <div>
             <LoadCanvasTemplateNoReload />
-            </div>);
-    };
+        </div>
+    );
+}
 ```
 
-   -  **Step 3:**  
+-  **Step 3:**  
   
 Paste **loadCaptchaEnginge(6)** *(You can change 6 to number of captcha charcters you want)* in **componentDidMount**
 
-   ```sh
- componentDidMount () {
-       loadCaptchaEnginge(6); 
-    };
+```js
+componentDidMount () {
+    loadCaptchaEnginge(6); 
+}
 ```
-   -  **Step 4:**  
+-  **Step 4:**  
   
 Validate captcha by using **validateCaptcha(user_captcha_value)** 
 
    
-   ```sh
- doSubmit = () => {
-<! --   let's assume there is an HTML input text box with id 'user_captcha_input' to get user input -->   
-        let user_captcha_value = document.getElementById('user_captcha_input').value;
+```js
+doSubmit = () => {
+    // Let's assume there is an HTML input text box with id 'user_captcha_input' to get user input 
+    const user_captcha_value = document.getElementById('user_captcha_input').value;
 
-        if (validateCaptcha(user_captcha_value)==true) {
-            alert('Captcha Matched');
-        }
-
-        else {
-            alert('Captcha Does Not Match');
-        }
-    };
+    if (validateCaptcha(user_captcha_value)) {
+        alert('Captcha Matched');
+    }
+    else {
+        alert('Captcha Does Not Match');
+    }
+};
 ```
 
 **OR**  
 If you don't want captcha to be reloaded if user enter the wrong value then set second parameter to *false* **validateCaptcha(user_captcha_value, false)**
 
  
- ```sh
- doSubmit = () => {
-<! --   let's assume there is an HTML input text box with id 'user_captcha_input' to get user input -->    
-        let user_captcha_value = document.getElementById('user_captcha_input').value;
+ ```js
+doSubmit = () => {
+    // Let's assume there is an HTML input text box with id 'user_captcha_input' to get user input
+    const user_captcha_value = document.getElementById('user_captcha_input').value;
 
-        if (validateCaptcha(user_captcha_value, false)==true) {
-            alert('Captcha Matched');
-        }
-
-        else {
-            alert('Captcha Does Not Match');
-        }
-    };
+    if (validateCaptcha(user_captcha_value, false)) {
+        alert('Captcha Matched');
+    }
+    else {
+        alert('Captcha Does Not Match');
+    }
+};
 ```
 
  
@@ -125,67 +127,63 @@ Listed are all the options available for react-simple-captcha
 ### Example
 Let's create a class name **CaptchaTest** with react simple captcha functionality:
 
- ```sh
+ ```js
 import React, { Component } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
-
-
 class CaptchaTest extends Component {
-
     componentDidMount () {
        loadCaptchaEnginge(6); 
     };
 
     doSubmit = () => {
-        let user_captcha = document.getElementById('user_captcha_input').value;
+        const user_captcha = document.getElementById('user_captcha_input').value;
 
-        if (validateCaptcha(user_captcha)==true) {
+        if (validateCaptcha(user_captcha)) {
             alert('Captcha Matched');
+
             loadCaptchaEnginge(6); 
             document.getElementById('user_captcha_input').value = "";
         }
-
         else {
             alert('Captcha Does Not Match');
+
             document.getElementById('user_captcha_input').value = "";
         }
     };
  
     render() {
-         
+        return (
+            <div>
+                <div className="container">
+                    <div className="form-group">
 
-        return (<div>
-            <div className="container">
-                <div className="form-group">
+                        <div className="col mt-3">
+                            <LoadCanvasTemplate />
+                        </div>
 
-                    <div className="col mt-3">
-                        <LoadCanvasTemplate />
+                        <div className="col mt-3">
+                            <div><input placeholder="Enter Captcha Value" id="user_captcha_input" name="user_captcha_input" type="text"></input></div>
+                        </div>
+
+                        <div className="col mt-3">
+                            <div><button className="btn btn-primary" onClick={() => this.doSubmit()}>Submit</button></div>
+                        </div>
                     </div>
-
-                    <div className="col mt-3">
-                        <div><input placeholder="Enter Captcha Value" id="user_captcha_input" name="user_captcha_input" type="text"></input></div>
-                    </div>
-
-                    <div className="col mt-3">
-                        <div><button class="btn btn-primary" onClick={() => this.doSubmit()}>Submit</button></div>
-                    </div>
-                      
                 </div>
-
             </div>
-        </div>);
+        );
     };
 }
 
 export default CaptchaTest;
 ```
 Import **CaptchaTest** in index.js
- ```sh
+ ```js
 import CaptchaTest from './captcha_test'; 
 ```
 Now replace **ReactDOM.render** with
- ```sh
+ ```js
 ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
 ```
 

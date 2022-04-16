@@ -20,10 +20,6 @@ let LoadCanvasTemplate_HTML = `
 let LoadCanvasTemplateNoReload_HTML = `
 <div>
     <canvas id="canv"></canvas>
-    <div>
-        <a id="reload_href" style="cursor: pointer; color: blue">
-        </a>
-    </div>
 </div>`;
 
 
@@ -64,6 +60,7 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
     const lineheight = 30;
 
     const lines = text.split('\n');
+    
     ctx.canvas.width = parseInt(length) * 25;
     ctx.canvas.height = (lines.length * lineheight);
 

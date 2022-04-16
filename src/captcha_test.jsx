@@ -3,7 +3,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 
 class CaptchaTest extends Component {
     componentDidMount () {
-        loadCaptchaEnginge(6,'white','black'); 
+        loadCaptchaEnginge(6, 'white', 'black'); 
     };
 
     doSubmit = () => {
@@ -11,11 +11,13 @@ class CaptchaTest extends Component {
 
         if (validateCaptcha(user_captcha)) {
             alert('Captcha Matched');
+
             loadCaptchaEnginge(6); 
             document.getElementById('user_captcha_input').value = "";
         }
         else {
             alert('Captcha Does Not Match');
+            
             document.getElementById('user_captcha_input').value = "";
         }
     };

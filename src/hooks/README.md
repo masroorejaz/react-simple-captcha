@@ -188,9 +188,13 @@ Now replace **ReactDOM.render** with
  ```sh
 ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
 ```
-
+### Support react-simple-captcha
+[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-red.png "Buy Masroor Ejaz a Coffee. Thank You")](https://www.buymeacoffee.com/masroorejaz) <br>
+**OR BUY SOMETHING FROM OUR AFFILIATED STORES** <br>
+[![Apparels Fly](https://apparelsfly.com/image/cache/apparelsflylogo-263x73.png "Apparels Fly | High Quality Apparels From USA")](https://apparelsfly.com/) <br>
+[![Tactical Apparels](http://tacticalapparels.com/image/cache/logo-199x73.png "Tactical Apparels | USA Quality Tactical Outdoor Clothing")](http://tacticalapparels.com/) <br>
 ### Rate react-simple-captcha
-Kindly rate react-simple-captcha at the following [link](https://openbase.com/js/react-simple-captcha#rate "link"). It will only take a few minutes. Thank you :)
+[![Rate Us](https://www.pngmart.com/files/7/Rate-Us-PNG-Transparent-Picture.png "Rate react-simple-captcha")](https://openbase.com/js/react-simple-captcha#rate)
 
 ### Browser support
 Works in every modern browser which has support for [canvas element](https://caniuse.com/canvas-text "canvas element").

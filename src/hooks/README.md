@@ -140,7 +140,7 @@ class CaptchaTest extends Component {
     doSubmit = () => {
         let user_captcha = document.getElementById('user_captcha_input').value;
 
-        if (validateCaptcha(user_captcha)==true) {
+        if (validateCaptcha(user_captcha)===true) {
             alert('Captcha Matched');
             loadCaptchaEnginge(6); 
             document.getElementById('user_captcha_input').value = "";
@@ -189,10 +189,8 @@ Now replace **ReactDOM.render** with
 ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
 ```
 ### Support react-simple-captcha
-[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-red.png "Buy Masroor Ejaz a Coffee. Thank You")](https://www.buymeacoffee.com/masroorejaz) <br>
-**OR BUY SOMETHING FROM OUR AFFILIATED STORES** <br>
-[![Apparels Fly](https://apparelsfly.com/image/cache/apparelsflylogo-263x73.png "Apparels Fly | High Quality Apparels From USA")](https://apparelsfly.com/) <br>
-[![Tactical Apparels](http://tacticalapparels.com/image/cache/logo-199x73.png "Tactical Apparels | USA Quality Tactical Outdoor Clothing")](http://tacticalapparels.com/) <br>
+[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-red.png "Buy Masroor Ejaz a Coffee. Thank You")](https://www.buymeacoffee.com/masroorejaz) 
+
 ### Rate react-simple-captcha
 [![Rate Us](https://www.pngmart.com/files/7/Rate-Us-PNG-Transparent-Picture.png "Rate react-simple-captcha")](https://openbase.com/js/react-simple-captcha#rate)
 

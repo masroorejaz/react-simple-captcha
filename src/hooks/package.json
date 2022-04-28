@@ -1,6 +1,6 @@
 {
   "name": "react-simple-captcha",
-  "version": "8.2.6",
+  "version": "9.0.0",
   "description": "A very simple,powerful and highly customizable captcha for ReactJS",
   "main": "react-simple-captcha.js",
   "scripts": {
@@ -24,8 +24,13 @@
   },
   "homepage": "https://github.com/masroorejaz/react-simple-captcha#readme",
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "react-html-parser": "^2.0.2"
+  },
+  "devDependencies": {
+    "react": "^17.1.0",
+    "react-dom": "^17.1.0"
+  },
+  "peerDependencies": {
+    "react": "*"
   }
 }

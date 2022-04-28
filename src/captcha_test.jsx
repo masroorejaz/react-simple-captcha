@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
  
 
 
@@ -7,13 +7,13 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 class CaptchaTest extends Component {
 
     componentDidMount () {
-        loadCaptchaEnginge(6,'white','black'); 
+        loadCaptchaEnginge(8); 
     };
 
     doSubmit = () => {
         let user_captcha = document.getElementById('user_captcha_input').value;
 
-        if (validateCaptcha(user_captcha)==true) {
+        if (validateCaptcha(user_captcha)===true) {
             alert('Captcha Matched');
             loadCaptchaEnginge(6); 
             document.getElementById('user_captcha_input').value = "";
@@ -34,7 +34,7 @@ class CaptchaTest extends Component {
                      
 
                     <div className="col mt-3">
-                        < LoadCanvasTemplate reloadText="Reload The Damn Captcha" reloadColor="red" />
+                        < LoadCanvasTemplate reloadColor="red" />
                     </div>
 
                    

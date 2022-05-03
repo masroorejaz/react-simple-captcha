@@ -28,6 +28,8 @@ export const loadCaptchaEnginge = (numberOfCharacters, backgroundColor = 'white'
     }
     else if (charMap === "special_char") {
         charset = "~`!@#$%^&*()_+-=[]{}\|:'<>,.?/";
+    } else if (charMap === "excluedeSimilarValues"){
+        charset= "qwertyuopasdfghkzxcvbnmQWERTYUOPASDFGHKZXCVBNM234567890"
     }
 
     let length = parseInt(numberOfCharacters);

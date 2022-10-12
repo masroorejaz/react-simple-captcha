@@ -20,7 +20,7 @@ Demo can be seen [here](https://react-simple-captcha.herokuapp.com/ "React Simpl
   Import all functions from react-simple-captcha
 
   ```sh
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEngine, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 ```
 
    -  **Step 2:**  
@@ -47,11 +47,11 @@ Place **< LoadCanvasTemplate />** or **< LoadCanvasTemplateNoReload />** *(if yo
 
    -  **Step 3:**  
   
-Paste **loadCaptchaEnginge(6)** *(You can change 6 to number of captcha charcters you want)* in **componentDidMount**
+Paste **loadCaptchaEngine(6)** *(You can change 6 to number of captcha charcters you want)* in **componentDidMount**
 
    ```sh
  componentDidMount () {
-       loadCaptchaEnginge(6); 
+       loadCaptchaEngine(6); 
     };
 ```
    -  **Step 4:**  
@@ -102,7 +102,7 @@ Listed are all the options available for react-simple-captcha
 | ------ | ------ |
 | **< LoadCanvasTemplate />** | It will load the captcha **with 'Reload Captcha'** functionality. Place between your render code, usage example **< LoadCanvasTemplate />** |
 | **< LoadCanvasTemplateNoReload />** | It will load the captcha **without 'Reload Captcha'** functionality. Place between your render code, usage example **< LoadCanvasTemplateNoReload />**  |
-| **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*);** | Simply paste it in **componentDidMount()**. Pass number of captcha characters you want to display. |
+| **loadCaptchaEngine(*Number_Of_Captcha_Charcters*);** | Simply paste it in **componentDidMount()**. Pass number of captcha characters you want to display. |
 | **validateCaptcha(*User_Submitted_Value*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Also will reload captcha if user submitted value is *false*  |
 | **validateCaptcha(*User_Submitted_Value*, *false*)** | Will return *true* if user submitted value matches with captcha otherwise *false*. Will not reload captcha if user submitted value is *false*  |
   
@@ -114,27 +114,27 @@ Listed are all the options available for react-simple-captcha
 | **< LoadCanvasTemplate reloadText="Reload My Captcha" />** | If you want to change the **"Reload Captcha"** with your own text |
 | **< LoadCanvasTemplate reloadColor="red" />** | If you want to change the blue color of **"Reload Captcha"** |
 | **< LoadCanvasTemplate reloadText="Reload My Captcha" reloadColor="red" />** | If you want to change the **"Reload Captcha"** text and it's blue color |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*);**  | If you want to change the background color from black to your custom color. Example Syntax to change the background color to red use: **loadCaptchaEnginge(6,'red');** |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the font color from white to your custom color. Example Syntax to change the font color to blue use: **loadCaptchaEnginge(6,'','blue');** |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the both background and font color. Example Syntax to change the background color to white and font color to black use: **loadCaptchaEnginge(6,'white','black');** |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Upper_Characters_Only*);**  | If you want only upper characters and numbers use **loadCaptchaEnginge(6,'','','upper');** |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Lower_Characters_Only*);**  | If you want only lower characters and numbers use **loadCaptchaEnginge(6,'','','lower');** |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Numbers*);**  | If you want only numbers use **loadCaptchaEnginge(6,'','','numbers');** |
-|  **loadCaptchaEnginge(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Special_Characters*);**  | If you want only special characters use **loadCaptchaEnginge(6,'','','special_char');** |
+|  **loadCaptchaEngine(*Number_Of_Captcha_Charcters*, *Background_Color*);**  | If you want to change the background color from black to your custom color. Example Syntax to change the background color to red use: **loadCaptchaEngine(6,'red');** |
+|  **loadCaptchaEngine(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the font color from white to your custom color. Example Syntax to change the font color to blue use: **loadCaptchaEngine(6,'','blue');** |
+|  **loadCaptchaEngine(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*);**  | If you want to change the both background and font color. Example Syntax to change the background color to white and font color to black use: **loadCaptchaEngine(6,'white','black');** |
+|  **loadCaptchaEngine(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Upper_Characters_Only*);**  | If you want only upper characters and numbers use **loadCaptchaEngine(6,'','','upper');** |
+|  **loadCaptchaEngine(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Lower_Characters_Only*);**  | If you want only lower characters and numbers use **loadCaptchaEngine(6,'','','lower');** |
+|  **loadCaptchaEngine(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Numbers*);**  | If you want only numbers use **loadCaptchaEngine(6,'','','numbers');** |
+|  **loadCaptchaEngine(*Number_Of_Captcha_Charcters*, *Background_Color*, *Font_Color*, *Special_Characters*);**  | If you want only special characters use **loadCaptchaEngine(6,'','','special_char');** |
  
 ### Example
 Let's create a class name **CaptchaTest** with react simple captcha functionality:
 
  ```sh
 import React, { Component } from 'react';
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEngine, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
 
 
 class CaptchaTest extends Component {
 
     componentDidMount () {
-       loadCaptchaEnginge(6); 
+       loadCaptchaEngine(6); 
     };
 
     doSubmit = () => {
@@ -142,7 +142,7 @@ class CaptchaTest extends Component {
 
         if (validateCaptcha(user_captcha)===true) {
             alert('Captcha Matched');
-            loadCaptchaEnginge(6); 
+            loadCaptchaEngine(6); 
             document.getElementById('user_captcha_input').value = "";
         }
 

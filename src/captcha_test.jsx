@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEngine, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
  
 
 

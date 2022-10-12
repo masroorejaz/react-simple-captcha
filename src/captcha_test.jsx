@@ -7,7 +7,7 @@ import { loadCaptchaEngine, LoadCanvasTemplate, validateCaptcha } from 'react-si
 class CaptchaTest extends Component {
 
     componentDidMount () {
-        loadCaptchaEnginge(8); 
+        loadCaptchaEngine(8); 
     };
 
     doSubmit = () => {
@@ -15,7 +15,7 @@ class CaptchaTest extends Component {
 
         if (validateCaptcha(user_captcha)===true) {
             alert('Captcha Matched');
-            loadCaptchaEnginge(6); 
+            loadCaptchaEngine(6); 
             document.getElementById('user_captcha_input').value = "";
         }
 

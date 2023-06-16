@@ -8,7 +8,7 @@ $ npm install react-simple-captcha
 ```
 
 **Demo**   
-Demo can be seen [here](https://react-simple-captcha.herokuapp.com/ "React Simple Captcha Demo").
+Demo can be seen [here](https://scriptse.com/blog/add-captcha-in-reactjs-application/react-simple-captcha-demo/ "React Simple Captcha Demo").
  
  **Usage Guide** 
  

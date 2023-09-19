@@ -188,9 +188,13 @@ Now replace **ReactDOM.render** with
  ```sh
 ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
 ```
+### Common Issues
 
-### Rate react-simple-captcha
-Kindly rate react-simple-captcha at the following [link](https://openbase.com/js/react-simple-captcha#rate "link"). It will only take a few minutes. Thank you :)
+**Not Woking on ReactJS Version 18^**
+Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/23
+
+**Not Woking on NextJS**
+Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/32
 
 ### Browser support
 Works in every modern browser which has support for [canvas element](https://caniuse.com/canvas-text "canvas element").
@@ -198,7 +202,7 @@ Works in every modern browser which has support for [canvas element](https://can
 ### License
 react-simple-captcha is licensed under the [MIT license](https://opensource.org/licenses/MIT "MIT license").
 
-### Author Profile
+### Developer Profile
  
 **Name:** Masroor Ejaz  
 **Linkedin:** https://www.linkedin.com/in/masroorejaz/  

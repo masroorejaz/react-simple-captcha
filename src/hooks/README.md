@@ -8,7 +8,7 @@ $ npm install react-simple-captcha
 ```
 
 **Demo**   
-Demo can be seen [here](https://react-simple-captcha.herokuapp.com/ "React Simple Captcha Demo").
+Demo can be seen [here](https://scriptse.com/blog/add-captcha-in-reactjs-application/react-simple-captcha-demo/ "React Simple Captcha Demo").
  
  **Usage Guide** 
  
@@ -188,11 +188,19 @@ Now replace **ReactDOM.render** with
  ```sh
 ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
 ```
-### Support react-simple-captcha
-[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-red.png "Buy Masroor Ejaz a Coffee. Thank You")](https://www.buymeacoffee.com/masroorejaz) 
+### Common Issues  
 
-### Rate react-simple-captcha
-[![Rate Us](https://www.pngmart.com/files/7/Rate-Us-PNG-Transparent-Picture.png "Rate react-simple-captcha")](https://openbase.com/js/react-simple-captcha#rate)
+**Not Woking on ReactJS Version 18^**  
+Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/23  
+
+**Not Woking on Next.js**  
+Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/32  
+
+**Not Woking with TypeScript**  
+Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/33  
+
+### Support Me  
+https://www.buymeacoffee.com/masroorejaz
 
 ### Browser support
 Works in every modern browser which has support for [canvas element](https://caniuse.com/canvas-text "canvas element").
@@ -200,9 +208,9 @@ Works in every modern browser which has support for [canvas element](https://can
 ### License
 react-simple-captcha is licensed under the [MIT license](https://opensource.org/licenses/MIT "MIT license").
 
-### Author Profile
+### Developer Profile
  
 **Name:** Masroor Ejaz  
 **Linkedin:** https://www.linkedin.com/in/masroorejaz/  
 **Twitter:** https://twitter.com/masroorejaz  
-**Note:** Feel free to contact me it you have any questions!
+**Note:** Feel free to contact me if you have any questions!

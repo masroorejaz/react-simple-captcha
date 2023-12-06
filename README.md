@@ -140,7 +140,7 @@ class CaptchaTest extends Component {
     doSubmit = () => {
         let user_captcha = document.getElementById('user_captcha_input').value;
 
-        if (validateCaptcha(user_captcha)==true) {
+        if (validateCaptcha(user_captcha)===true) {
             alert('Captcha Matched');
             loadCaptchaEnginge(6); 
             document.getElementById('user_captcha_input').value = "";
@@ -188,13 +188,19 @@ Now replace **ReactDOM.render** with
  ```sh
 ReactDOM.render(<CaptchaTest />, document.getElementById('root'));
 ```
-### Common Issues
+### Common Issues  
 
-**Not Woking on ReactJS Version 18^**
-Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/23
+**Not Woking on ReactJS Version 18^**  
+Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/23  
 
-**Not Woking on NextJS**
-Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/32
+**Not Woking on Next.js**  
+Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/32  
+
+**Not Woking with TypeScript**  
+Solution Here: https://github.com/masroorejaz/react-simple-captcha/issues/33  
+
+### Support Me  
+https://www.buymeacoffee.com/masroorejaz
 
 ### Browser support
 Works in every modern browser which has support for [canvas element](https://caniuse.com/canvas-text "canvas element").
@@ -207,4 +213,4 @@ react-simple-captcha is licensed under the [MIT license](https://opensource.org/
 **Name:** Masroor Ejaz  
 **Linkedin:** https://www.linkedin.com/in/masroorejaz/  
 **Twitter:** https://twitter.com/masroorejaz  
-**Note:** Feel free to contact me it you have any questions!
+**Note:** Feel free to contact me if you have any questions!
